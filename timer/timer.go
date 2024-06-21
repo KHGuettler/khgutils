@@ -3,23 +3,23 @@ package timer
 import "time"
 
 type Timer struct {
-	StartTime time.Time
-	EndTime   time.Time
+	startTime time.Time
+	endTime   time.Time
 }
 
 func (t *Timer) Start() {
-	t.StartTime = time.Now()
+	t.startTime = time.Now()
 }
 
 func (t *Timer) Stop() {
-	t.EndTime = time.Now()
+	t.endTime = time.Now()
 }
 
 func (t *Timer) Reset() {
-	t.StartTime = time.Now()
-	t.EndTime = time.Now()
+	t.startTime = time.Now()
+	t.endTime = time.Now()
 }
 
 func (t *Timer) Duration() time.Duration {
-	return t.EndTime.Sub(t.StartTime)
+	return t.endTime.Sub(t.startTime)
 }
